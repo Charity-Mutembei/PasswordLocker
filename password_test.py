@@ -82,6 +82,21 @@ class TestUser(unittest.TestCase):
         self.assertEqual(found_user.email, test_user.email)
 
         #the above method requires a class method in the user document/file
+    
+    def test_user_exists(self):
+        '''
+        test to check if we can return a boolean if we can find/cannot find the user
+        '''
+
+        self.new_user.save_user()
+        test_user = User ('Test', 'user', 'user_name', '0702659321', 'test@user.com')
+        test_user.save_user()
+
+        user_exists = User.user_exists('0702659321')
+        self.assertTrue(user_exists)
+
+        #this method demands for a class method as well
+
 
 
 if __name__ == '__main__':
