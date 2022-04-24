@@ -96,6 +96,14 @@ class TestUser(unittest.TestCase):
         self.assertTrue(user_exists)
 
         #this method demands for a class method as well
+    
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
+        self.assertEqual(User.display_users(), User.user_list)
+
+        #this requires a classmethod
 
 
 
