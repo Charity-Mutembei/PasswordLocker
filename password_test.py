@@ -67,5 +67,22 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(len(User.user_list),1)
 
+        #we added the above method to the class as well. 
+        #test-5 - findinf a user by username
+    def test_find_user_by_username(self):
+        '''
+        test to check if we can find a contact by username and display information
+        '''
+
+        self.new_user.save_user()
+        test_user = User('Test', 'user', 'user_name', '0702659321', 'test@user.com')
+        test_user.save_user()
+
+        found_user = User.find_by_username('user_name')
+        self.assertEqual(found_user.email, test_user.email)
+
+        #the above method requires a class method in the user document/file
+
+
 if __name__ == '__main__':
     unittest.main()
