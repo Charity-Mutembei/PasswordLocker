@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 from typing import Tuple
 from User import User
 
@@ -110,11 +111,12 @@ def main():
                 print ('{user.user_name} {user.number} .....Y/n')
 
 
-                del_user(find_user(phone_number, user_name))
+                del_user(find_user(phone_number))
                 print ('{user.user_name} deleted')
             
         elif short_code == 'ex':
             print('Have a lovely day ahead')
+            break
         else:
             print ('Command not found. Consider restarting and using the provided shortcodes')
         
