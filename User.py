@@ -102,3 +102,27 @@ class User:
     #     user_found = User.find_by_number(number)
     #     pyperclip.copy(user_found.email)
 
+class Credentials:
+    '''
+    class the generates passwords for the user
+    '''
+    pass 
+
+    password_list = []
+
+    def __init__(self, first_name, last_name, user_name, phone_number, email, password):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_name = user_name
+        self.phone_number = phone_number
+        self.email= email
+    def save_password(self):
+        '''
+        save_password method that saves the password object of each user into the password_list
+        '''
+        Credentials.password_list.append(self)
+        
+    
+
+
+
