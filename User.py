@@ -1,3 +1,6 @@
+import pyperclip
+
+
 class User:
     '''
     Class that generates new instances of the Users
@@ -52,7 +55,23 @@ class User:
             if user.user_name == user_name:
                 return user  
     
-    #this class method is a decorator 
+    #this class method is a decorator
+    
+    @classmethod
+    def find_by_number(cls,number):
+        '''
+        method that takes in a number and returns a conatct that matches the number 
+
+        Args: 
+        number: phone number to search for 
+        Returns:
+        User that the phone number matches with
+        '''
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return user
+
+
     @classmethod
     def user_exists (cls, number):
         '''
@@ -76,3 +95,10 @@ class User:
         method that returns the user list
         '''
         return cls.user_list
+    
+    # @classmethod
+
+    # def copy_email(cls, number):
+    #     user_found = User.find_by_number(number)
+    #     pyperclip.copy(user_found.email)
+

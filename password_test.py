@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from User import User
 
 class TestUser(unittest.TestCase):
@@ -83,6 +84,18 @@ class TestUser(unittest.TestCase):
 
         #the above method requires a class method in the user document/file
     
+    def test_find_user_by_number(self):
+        '''
+        test to check if we can find a contact by phone number and display information
+        '''
+
+        self.new_user.save_user()
+        test_user = User('Test', 'user', 'user_name', '0702659321', 'test@user.com')
+        test_user.save_user()
+        found_user = User.find_by_number ('0702659321')
+        self.assertEqual(found_user.email, test_user.email)
+        
+    
     def test_user_exists(self):
         '''
         test to check if we can return a boolean if we can find/cannot find the user
@@ -104,6 +117,18 @@ class TestUser(unittest.TestCase):
         self.assertEqual(User.display_users(), User.user_list)
 
         #this requires a classmethod
+    
+    # def test_copy_email(self):
+    #     '''
+    #     test to confirm that we are copying the email address from a found user
+    #     '''
+
+    #     self.new_user.save_user()
+    #     User.copy_email('0702659321')
+
+    #     self.assertEqual(self.new_user.email, pyperclip.paste ())
+
+    #     #this needs a classmethod as well
 
 
 
