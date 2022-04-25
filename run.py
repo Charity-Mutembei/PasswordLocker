@@ -17,3 +17,19 @@ def save_users(user):
     '''
     user.save_user()
 
+#test three- delete user functions 
+def del_user(user):
+    '''
+    Function to delete user
+    '''
+    user .delete_user()
+
+#test four- finding the user functions 
+def find_contact(number, user_name):
+    '''
+    Function to find a user by number or username and returns the user information
+    '''
+    return User.find_by_number(number)
+    return User.find_by_username (user_name)
+
+
