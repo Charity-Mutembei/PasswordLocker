@@ -78,7 +78,7 @@ def main():
 
             print ('email address')
             e_address = input()
-            print ('password! generate yours or suggestion: dc{user_name}yz')
+            print ('password')
             password = input()
 
 

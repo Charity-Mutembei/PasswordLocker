@@ -1,5 +1,7 @@
 from User import Credentials
 import unittest
+import random
+import string 
 class TestContact (unittest.TestCase):
     '''
     Test class that defines test cases for the user accounts class behavior 
@@ -83,6 +85,9 @@ class TestContact (unittest.TestCase):
     #     Contact.copy_email('0712345678')
 
     #     self.assertEqual(self.new_contact.email, pyperclip.paste())
+
+       
+
   
 
    

@@ -1,4 +1,6 @@
 import re
+import string
+import random
 import pyperclip
 
 
@@ -123,6 +125,11 @@ class Credentials:
         save_password method that saves the password object of each user into the password_list
         '''
         Credentials.password_list.append(self)
+    def generate_password (cls):
+        size = 6
+        genpassword = string.ascii_uppercase + string.digits + string.ascii_lowercase
+        password = '.join(choice(genpassword)for num in range(size))'
+        return password
     @classmethod
     def find_by_number (cls, number):
         '''
