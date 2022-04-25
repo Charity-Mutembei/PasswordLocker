@@ -1,3 +1,4 @@
+from typing import Tuple
 from User import User
 
 #we are now creating functions to implement the tests tested
@@ -46,3 +47,40 @@ def display_users():
     Function that returns all the saved user accounts/information
     '''
     return User.display_users()
+
+#below is the main function
+def main():
+    print ('Hello, Welcome to the Password Locker. What is your name?')
+    user_name = input()
+    print (f'Hello {user_name}. How can we help you today?')
+
+    print ('\n')
+    while True:
+        print ('use this short codes to commence: cc - Creates a new account in the passwordLocker, lc- logs you in into an already existing account in the passwordLocker, vc- allows you to see the list of accounts and their passwords present in the passwordLocker, dc- allows you to delete accounts you perhaps do not want anymore')
+        short_code = input().lower()
+        if short_code == 'cc':
+            print ('New Contact')
+            print ('_'*10)
+
+            print ('First Name')
+            f_name = input()
+
+            print ('Last Name')
+            l_name = input ()
+
+            print ('User Name of choice')
+            u_name = input ()
+
+            print ('Phone Number')
+            p_number = input()
+
+            print ('email address')
+            e_address = input()
+
+            save_users(create_user (f_name, l_name, u_name, p_number, e_address))
+
+            print('\n')
+            print (f'new User {u_name} created')
+            print('\n')
+
+            elif short_code == 
