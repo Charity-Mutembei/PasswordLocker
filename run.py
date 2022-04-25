@@ -117,5 +117,9 @@ def main():
             print('Have a lovely day ahead')
         else:
             print ('Command not found. Consider restarting and using the provided shortcodes')
+        
+
+if __name__ == '__main__':
+    main()
             
 
