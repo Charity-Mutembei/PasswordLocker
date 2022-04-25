@@ -9,3 +9,11 @@ def create_userAccount(fname, lname, username, phoneNumber, email):
     '''
     new_user = User(fname, lname, username, phoneNumber, email)
     return new_user
+
+#test two- create a saves users/accounts info function
+def save_users(user):
+    '''
+    Function to save the users
+    '''
+    user.save_user()
+
