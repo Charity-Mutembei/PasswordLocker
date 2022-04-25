@@ -1,15 +1,16 @@
 #!/usr/bin/env python3.8
 from typing import Tuple
 from User import User
+from User import Credentials
 
 #we are now creating functions to implement the tests tested
 #test one- create a user account
 
-def create_user(fname, lname, username, phoneNumber, email):
+def create_user(fname, lname, username, phoneNumber, email, password):
     '''
     Function that allows a user create an account
     '''
-    new_user = User(fname, lname, username, phoneNumber, email)
+    new_user = User(fname, lname, username, phoneNumber, email, password)
     return new_user
 
 #test two- create a saves users/accounts info function
@@ -77,8 +78,11 @@ def main():
 
             print ('email address')
             e_address = input()
+            print ('password! generate yours or suggestion: (dc{user.username}yz)')
+            password = input()
 
-            save_users(create_user (f_name, l_name, u_name, p_number, e_address))
+
+            save_users(create_user (f_name, l_name, u_name, p_number, e_address, password))
 
             print('\n')
             print (f'new User {u_name} created')

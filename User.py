@@ -117,6 +117,7 @@ class Credentials:
         self.user_name = user_name
         self.phone_number = phone_number
         self.email= email
+        self.password = password
     def save_credentials(self):
         '''
         save_password method that saves the password object of each user into the password_list

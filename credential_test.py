@@ -10,7 +10,7 @@ class TestContact (unittest.TestCase):
         '''
         set up method to run before each test case. 
         '''
-        self.new_credentials = Credentials('Charity', 'Mutembei', 'Cherry', '0721263471', 'charry@gmail.com')
+        self.new_credentials = Credentials('Charity', 'Mutembei', 'Cherry', '0721263471', 'charry@gmail.com', 'password')
 
     def tearDown(self):
         '''
