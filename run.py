@@ -32,4 +32,17 @@ def find_contact(number, user_name):
     return User.find_by_number(number)
     return User.find_by_username (user_name)
 
+#test five- check if the user exists function
+def check_existing_users(number, email):
+    '''
+    Function that check ig a user does exist with that number and return a Boolean
+    '''
+    return User.user_exists(number)
+    return User.user_exists(email)
 
+#test six- check if all the user accounts accounts by displaying them
+def display_users():
+    '''
+    Function that returns all the saved user accounts/information
+    '''
+    return User.display_users()
