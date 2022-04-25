@@ -1,3 +1,4 @@
+import re
 import pyperclip
 
 
@@ -116,12 +117,52 @@ class Credentials:
         self.user_name = user_name
         self.phone_number = phone_number
         self.email= email
-    def save_password(self):
+    def save_credentials(self):
         '''
         save_password method that saves the password object of each user into the password_list
         '''
         Credentials.password_list.append(self)
+    @classmethod
+    def find_by_number (cls, number):
+        '''
+        method that takes in numbers and returns a contact that match 
+        Args:
+        number: phone number to search for
+        Returns: 
+        user credentials that matches the number
+        '''
+        for credentials in cls.password_list:
+            if credentials.phone_number == number:
+                return credentials
         
+        @classmethod
+        def credentials_exists(cls, number):
+            '''
+            method that checks if the credentials exists from the password lists 
+            Args:
+            number: phone number to search if it exists
+            Returns:
+            Boolean: true or false depending if the credentials exists
+            '''
+            for credentials in cls.password_list:
+                if credentials.phone_number == number:
+                    return True
+            
+            return False
+
+        @classmethod
+        def display_credentials (cls):
+            '''
+            method that returns the password list
+            '''
+            return cls.password_list
+
+            # @classmethod
+            # def copy_email (cls, number):
+            #     credentials_found = Credentials.find_by_number(number)
+            #     pyperclip
+
+
     
 
 
